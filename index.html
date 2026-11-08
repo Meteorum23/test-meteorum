@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="Page de test statique pour test.meteorum.fr">
+    <title>Meteorum — Site test</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --blue: #1539a8;
+        --blue-deep: #07194f;
+        --yellow: #ffd34e;
+        --white: #ffffff;
+        --mist: #eef3ff;
+        --ink: #14204a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        min-height: 100%;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        background: var(--mist);
+        color: var(--ink);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      header {
+        position: relative;
+        overflow: hidden;
+        min-height: 66vh;
+        display: grid;
+        place-items: center;
+        padding: 4rem 1.5rem;
+        color: var(--white);
+        background-color: var(--blue-deep);
+        background-image:
+          radial-gradient(circle at 12% 18%, rgba(255,255,255,.92) 0 1px, transparent 1.4px),
+          radial-gradient(circle at 78% 32%, rgba(255,255,255,.62) 0 .8px, transparent 1.2px),
+          radial-gradient(circle at 44% 76%, rgba(255,211,78,.78) 0 .7px, transparent 1.1px);
+        background-size: 91px 103px, 147px 131px, 209px 173px;
+      }
+
+      header::after {
+        content: "";
+        position: absolute;
+        width: 26rem;
+        height: 26rem;
+        right: -13rem;
+        bottom: -16rem;
+        border: 1px solid rgba(255, 211, 78, .45);
+        border-radius: 50%;
+        box-shadow: 0 0 0 4rem rgba(255, 211, 78, .04);
+      }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        width: min(880px, 100%);
+        text-align: center;
+      }
+
+      .mark {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1.5rem;
+        display: grid;
+        place-items: center;
+        border-radius: 1.25rem;
+        background: var(--yellow);
+        color: var(--blue-deep);
+        font: 800 2rem/1 Georgia, serif;
+        transform: rotate(-4deg);
+      }
+
+      .eyebrow {
+        margin: 0 0 1rem;
+        color: var(--yellow);
+        font-size: .78rem;
+        font-weight: 800;
+        letter-spacing: .18em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 10vw, 6.8rem);
+        font-weight: 500;
+        line-height: .95;
+        letter-spacing: -.045em;
+      }
+
+      .lead {
+        max-width: 42rem;
+        margin: 1.5rem auto 0;
+        color: #dbe5ff;
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+      }
+
+      main {
+        width: min(980px, calc(100% - 2rem));
+        margin: -3.2rem auto 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      .status {
+        padding: clamp(1.5rem, 5vw, 3rem);
+        border: 1px solid rgba(20, 32, 74, .1);
+        border-radius: 1.5rem;
+        background: var(--white);
+        box-shadow: 0 1.5rem 4rem rgba(7, 25, 79, .14);
+        text-align: center;
+      }
+
+      .signal {
+        display: inline-flex;
+        align-items: center;
+        gap: .6rem;
+        margin-bottom: 1rem;
+        color: var(--blue);
+        font-size: .8rem;
+        font-weight: 800;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+      }
+
+      .signal::before {
+        content: "";
+        width: .7rem;
+        height: .7rem;
+        border-radius: 50%;
+        background: #1cab6c;
+        box-shadow: 0 0 0 .3rem rgba(28, 171, 108, .13);
+      }
+
+      h2 {
+        margin: 0;
+        color: var(--blue-deep);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 6vw, 3.6rem);
+        font-weight: 500;
+      }
+
+      .status > p {
+        max-width: 42rem;
+        margin: 1rem auto 0;
+        color: #526084;
+      }
+
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 2rem;
+        overflow: hidden;
+        border: 1px solid #dbe2f4;
+        border-radius: 1rem;
+        background: #dbe2f4;
+      }
+
+      .facts article {
+        padding: 1.4rem 1rem;
+        background: #f9fbff;
+      }
+
+      .facts strong {
+        display: block;
+        color: var(--blue);
+        font-size: 1.05rem;
+      }
+
+      .facts span {
+        display: block;
+        margin-top: .25rem;
+        color: #677392;
+        font-size: .82rem;
+      }
+
+      footer {
+        padding: 3rem 1.5rem;
+        color: #65708e;
+        text-align: center;
+        font-size: .78rem;
+      }
+
+      @media (max-width: 640px) {
+        header {
+          min-height: 62vh;
+          padding-top: 3rem;
+        }
+
+        .facts {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="hero">
+        <div class="mark" aria-hidden="true">M</div>
+        <p class="eyebrow">test.meteorum.fr</p>
+        <h1>Meteorum</h1>
+        <p class="lead">Un premier site, volontairement simple, pour vérifier que la chaîne Mac → GitHub → OVH fonctionne.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="status" aria-labelledby="status-title">
+        <div class="signal">Environnement de test</div>
+        <h2 id="status-title">Le site fonctionne.</h2>
+        <p>Cette page est entièrement statique. Elle ne dépose aucun cookie, n’exécute aucun script et ne transmet aucune donnée.</p>
+
+        <div class="facts" aria-label="Caractéristiques techniques">
+          <article>
+            <strong>HTML5</strong>
+            <span>Une structure claire et standard.</span>
+          </article>
+          <article>
+            <strong>CSS intégré</strong>
+            <span>Couleurs et mise en page dans un seul fichier.</span>
+          </article>
+          <article>
+            <strong>Zéro interaction</strong>
+            <span>Aucun formulaire, bouton ou JavaScript.</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      Meteorum · Page technique de démonstration · Non indexée
+    </footer>
+  </body>
+</html>
